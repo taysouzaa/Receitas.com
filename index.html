@@ -1,24 +1,23 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Receitas da Vovó</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="principal/src/style.css" />
 </head>
 <body>
   <header>
     <div class="logo-container">
-      <img src="Logo;.png" alt="Logo Receitas da Vovó" />
+      <img src="principal/src/Logo.png" alt="Logo Receitas da Vovó" />
       <h1>Receitas da Vovó</h1>
     </div>
     <nav>
       <ul class="nav-links">
-        <li><a href="index.html">Início</a></li>
-        <li><a href="sobre.html">Sobre</a></li>
-        <li><a href="contato.html">Contato</a></li>
-        <li><a href="mais-receitas.html">Mais Receitas</a></li>
+        <li><a href="index.html" aria-current="page">Início</a></li>
+        <li><a href="principal/src/sobre.html">Sobre</a></li>
+        <li><a href="principal/src/contato.html">Contato</a></li>
       </ul>
     </nav>
   </header>
@@ -29,23 +28,55 @@
       <p>Aqui você encontra o sabor das tradições, com receitas que atravessam gerações.</p>
     </section>
 
-    <section class="galeria">
-      <div class="receita-card">
-        <img src=Escondidinho de Carne Seca com Mandioca 🥩🍠.jpg"" alt="Escondidinho de Carne" />
+    <section class="galeria" aria-label="Galeria de receitas em destaque">
+      <article class="receita-card">
+        <img src="principal/src/imagens/escondidinho.jpg" alt="Escondidinho de Carne" />
         <h3>Escondidinho de Carne</h3>
-        <a href="escondidinho.html">Ver receita</a>
-      </div>
-      <div class="receita-card">
-        <img src="principal/img/Coxinha de Frango.jpg" alt="Coxinha de Frango" />
+        <a href="principal/src/escondidinho.html" class="botao">Ver receita</a>
+      </article>
+
+      <article class="receita-card">
+        <img src="principal/src/imagens/coxinha.jpg" alt="Coxinha de Frango crocante" />
         <h3>Coxinha de Frango</h3>
-        <a href="coxinha.html">Ver receita</a>
-      </div>
+        <a href="principal/src/coxinha.html" class="botao">Ver receita</a>
+      </article>
+
+      <article class="receita-card">
+        <img src="principal/src/imagens/lasanha.jpg" alt="Lasanha de Frango com Requeijão" />
+        <h3>Lasanha de Frango com Requeijão</h3>
+        <a href="principal/src/lasanha.html" class="botao">Ver receita</a>
+      </article>
+
+      <article class="receita-card">
+        <img src="principal/src/imagens/bolodechocolate.jpg" alt="Bolo de Chocolate com cobertura" />
+        <h3>Bolo de Chocolate</h3>
+        <a href="principal/src/bolodechoc.html" class="botao">Ver receita</a>
+      </article>
+
+      <article class="receita-card">
+        <img src="principal/src/imagens/brownie.jpg" alt="Brownie com pedaços de chocolate" />
+        <h3>Brownie</h3>
+        <a href="principal/src/brownie.html" class="botao">Ver receita</a>
+      </article>
+
+      <article class="receita-card">
+        <img src="principal/src/imagens/pave.jpg" alt="Pavê de Morango com Chocolate" />
+        <h3>Pavê de Morango com Chocolate</h3>
+        <a href="principal/src/pave.html" class="botao">Ver receita</a>
+      </article>
+
+      <article class="receita-card">
+        <img src="principal/src/imagens/mousse.jpg" alt="Mousse de Limão servido em taça" />
+        <h3>Mousse de Limão</h3>
+        <a href="principal/src/mousse.html" class="botao">Ver receita</a>
+      </article>
     </section>
   </main>
 
   <footer>
     <p>&copy; 2025 Receitas da Vovó • Todos os direitos reservados</p>
   </footer>
-  <script src="script.js"></script>
+
+  <script src="principal/src/script.js"></script>
 </body>
 </html>

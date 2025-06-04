@@ -1,157 +1,244 @@
 /* Reset básico */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+/* Corpo e fonte */
 body {
-    background-color: #f8f3eb;
-    color: #333;
-    line-height: 1.6;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f7ff; /* azul bem clarinho */
+  color: #1a2e4a; /* azul escuro */
+  line-height: 1.6;
+  padding: 24px 20px;
+  transition: background-color 0.4s ease;
 }
 
-/* Estilização do cabeçalho */
+/* Cabeçalho */
 header {
-    background-color: #d9a066;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: #1a3a66; /* azul forte */
+  color: #e6f0ff; /* azul clarinho */
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  box-shadow: 0 4px 8px rgba(26, 58, 102, 0.3);
+  transition: background-color 0.4s ease;
 }
 
 .logo-container {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.3s ease;
 }
 
-#logo {
-    width: 60px;
-    height: auto;
-    margin-right: 15px;
-    border-radius: 50%;
+.logo-container:hover {
+  transform: scale(1.05);
 }
 
-h1 {
-    font-size: 1.8rem;
-    color: white;
+.logo-container img {
+  height: 48px;
+  width: auto;
 }
 
-.nav-links {
-    list-style: none;
-    display: flex;
+/* Menu de navegação */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 28px;
 }
 
-.nav-links li {
-    margin: 0 15px;
+nav a {
+  color: #b8d1ff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.05rem;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: background-color 0.35s ease, color 0.35s ease, transform 0.25s ease;
 }
 
-.nav-links a {
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    transition: 0.3s;
+nav a[aria-current="page"],
+nav a:hover {
+  background-color: #3b69a4; /* azul médio */
+  color: #e6f0ff;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(59, 105, 164, 0.5);
 }
 
-.nav-links a:hover {
-    color: #5d3a1a;
+/* Main - container geral para conteúdo */
+main {
+  max-width: 900px;
+  margin: 36px auto;
+  padding: 0 16px;
 }
 
-/* Seção de introdução */
-.introducao {
-    text-align: center;
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 20px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+/* Títulos */
+h1, h2, h3 {
+  font-weight: 700;
+  color: #2a4373;
+  margin-bottom: 18px;
+  letter-spacing: 0.03em;
+  user-select: none;
 }
 
-.introducao h2 {
-    color: #d9883f;
-    margin-bottom: 10px;
+h3 {
+  font-size: 1.3rem;
 }
 
-/* Estilização das receitas */
-.receitas {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    padding: 20px;
+/* Cards (receitas, produtos, posts, etc) */
+.card-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 26px;
 }
 
-.receita {
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    text-align: center;
+.card {
+  background-color: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 3px 8px rgba(26, 58, 102, 0.1);
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
-/* Ajuste do tamanho das imagens */
-.receita img {
-    width: 100%;
-    max-width: 350px; /* Tamanho máximo */
-    height: auto; /* Mantém a proporção */
-    border-radius: 10px;
-    display: block;
-    margin: 0 auto; /* Centraliza a imagem */
+.card:hover {
+  transform: translateY(-10px) scale(1.04);
+  box-shadow: 0 12px 24px rgba(26, 58, 102, 0.3);
 }
 
-.receita h2 {
-    color: #b45309;
-    margin: 10px 0;
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-bottom: 3px solid #3b69a4;
+  transition: filter 0.4s ease;
 }
 
-.receita ul, .receita ol {
-    text-align: left;
-    padding: 10px 20px;
+.card:hover img {
+  filter: brightness(1.1);
 }
 
-.receita ul li, .receita ol li {
-    margin-bottom: 5px;
+.card h3 {
+  padding: 16px 20px 12px;
+  color: #1a3a66;
+  font-weight: 700;
+}
+
+.card a {
+  display: block;
+  background-color: #1a3a66;
+  color: #e6f0ff;
+  text-align: center;
+  padding: 14px 0;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 0 0 14px 14px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.card a:hover {
+  background-color: #3b69a4;
+  transform: translateY(-4px);
+}
+
+/* Formulário */
+.form-container {
+  max-width: 620px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 28px 32px;
+  border-radius: 14px;
+  box-shadow: 0 3px 12px rgba(26, 58, 102, 0.12);
+  transition: box-shadow 0.3s ease;
+}
+
+.form-container:hover {
+  box-shadow: 0 8px 20px rgba(26, 58, 102, 0.25);
+}
+
+.form-container label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 700;
+  color: #2a4373;
+}
+
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container textarea {
+  width: 100%;
+  padding: 12px 16px;
+  margin-bottom: 20px;
+  border: 1.8px solid #9bb9e7;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #1a2e4a;
+  background-color: #f5faff;
+  transition: border-color 0.35s ease, background-color 0.35s ease;
+}
+
+.form-container input[type="text"]:focus,
+.form-container input[type="email"]:focus,
+.form-container textarea:focus {
+  outline: none;
+  border-color: #1a3a66;
+  background-color: #e6f0ff;
+}
+
+.form-container button {
+  background-color: #1a3a66;
+  color: #e6f0ff;
+  border: none;
+  padding: 16px 0;
+  width: 100%;
+  font-size: 1.15rem;
+  font-weight: 800;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.35s ease, transform 0.3s ease;
+}
+
+.form-container button:hover {
+  background-color: #3b69a4;
+  transform: scale(1.05);
 }
 
 /* Rodapé */
 footer {
-    background: #d9a066;
-    padding: 20px;
-    text-align: center;
-    color: white;
-    margin-top: 40px;
-}
-
-.sugestao-receita label {
-    font-weight: bold;
-    display: block;
-    margin-bottom: 5px;
-}
-
-#sugestao {
-    width: 100%;
-    max-width: 600px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+  text-align: center;
+  margin-top: 52px;
+  padding: 18px 0;
+  background-color: #1a3a66;
+  color: #e6f0ff;
+  font-weight: 700;
+  font-size: 1.05rem;
+  border-radius: 0 0 14px 14px;
+  user-select: none;
 }
 
 /* Responsividade */
 @media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        text-align: center;
-    }
-    .nav-links {
-        flex-direction: column;
-    }
-    .nav-links li {
-        margin: 10px 0;
-    }
+  nav ul {
+    flex-direction: column;
+    gap: 14px;
+    align-items: center;
+  }
 
-    .receita img {
-        max-width: 250px; /* Reduz o tamanho das imagens para telas menores */
-    }
+  header {
+    justify-content: center;
+  }
+
+  main {
+    margin: 28px 14px;
+  }
+
+  .card img {
+    height: 140px;
+  }
 }
