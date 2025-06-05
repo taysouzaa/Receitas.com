@@ -7,33 +7,31 @@
 
 /* Corpo e fonte */
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f0f7ff; /* azul bem clarinho */
-  color: #1a2e4a; /* azul escuro */
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f5f8ff;
+  color: #1e2a38;
   line-height: 1.6;
-  padding: 24px 20px;
-  transition: background-color 0.4s ease;
 }
 
 /* Cabeçalho */
 header {
-  background-color: #1a3a66; /* azul forte */
-  color: #e6f0ff; /* azul clarinho */
-  padding: 18px 24px;
+  background-color: #153b6d;;
+  color: white;
+  padding: 16px 32px;
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   flex-wrap: wrap;
-  box-shadow: 0 4px 8px rgba(26, 58, 102, 0.3);
-  transition: background-color 0.4s ease;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(21, 59, 109, 0.3);
+  margin: 20px;
 }
 
 .logo-container {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 1rem;
   cursor: pointer;
-  user-select: none;
   transition: transform 0.3s ease;
 }
 
@@ -42,64 +40,97 @@ header {
 }
 
 .logo-container img {
-  height: 48px;
+  height: 50px;
   width: auto;
 }
 
-/* Menu de navegação */
-nav ul {
+/* Navegação */
+.nav-links {
   list-style: none;
   display: flex;
-  gap: 28px;
+  gap: 2.5rem;
+  padding-left: 0;
 }
 
-nav a {
+nav {
+  display: block;
+  unicode-bidi: isolate;
+}
+  
+.nav-links a.active,
+.nav-links a:hover {
+  color: #ffffff;
+  border-bottom: 2px solid white;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.nav-links a {
   color: #b8d1ff;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: bold;
+  transition: color 0.3s, border-bottom 0.3s;
   font-size: 1.05rem;
   padding: 6px 10px;
   border-radius: 6px;
-  transition: background-color 0.35s ease, color 0.35s ease, transform 0.25s ease;
+  transition: background-color 0.35s ease, transform 0.25s ease;
 }
 
-nav a[aria-current="page"],
-nav a:hover {
-  background-color: #3b69a4; /* azul médio */
-  color: #e6f0ff;
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    padding-inline-start: 40px;
+    unicode-bidi: isolate;
+}
+
+.nav-links a.active,
+.nav-links a:hover {
+  background-color: #3b69a4;
+  color: white;
   transform: translateY(-3px);
-  box-shadow: 0 4px 8px rgba(59, 105, 164, 0.5);
-}
-
-/* Main - container geral para conteúdo */
-main {
-  max-width: 900px;
-  margin: 36px auto;
-  padding: 0 16px;
+  box-shadow: 0 4px 8px rgba(59, 105, 164, 0.4);
 }
 
 /* Títulos */
 h1, h2, h3 {
   font-weight: 700;
-  color: #2a4373;
+  color: #2655ad;
   margin-bottom: 18px;
   letter-spacing: 0.03em;
   user-select: none;
+}
+
+h2 {
+  text-align: center;
+  color: #153b6d;
 }
 
 h3 {
   font-size: 1.3rem;
 }
 
-/* Cards (receitas, produtos, posts, etc) */
+/* Área principal */
+main {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 0 1rem;
+}
+
+/* Cards */
 .card-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 26px;
+  gap: 24px;
 }
 
 .card {
-  background-color: #ffffff;
+  background-color: white;
   border-radius: 14px;
   box-shadow: 0 3px 8px rgba(26, 58, 102, 0.1);
   overflow: hidden;
@@ -109,7 +140,7 @@ h3 {
 
 .card:hover {
   transform: translateY(-10px) scale(1.04);
-  box-shadow: 0 12px 24px rgba(26, 58, 102, 0.3);
+  box-shadow: 0 12px 24px rgba(26, 58, 102, 0.25);
 }
 
 .card img {
@@ -121,22 +152,20 @@ h3 {
 }
 
 .card:hover img {
-  filter: brightness(1.1);
+  filter: brightness(1.08);
 }
 
 .card h3 {
   padding: 16px 20px 12px;
-  color: #1a3a66;
-  font-weight: 700;
 }
 
 .card a {
   display: block;
   background-color: #1a3a66;
-  color: #e6f0ff;
+  color: white;
   text-align: center;
   padding: 14px 0;
-  font-weight: 700;
+  font-weight: bold;
   text-decoration: none;
   border-radius: 0 0 14px 14px;
   transition: background-color 0.3s ease, transform 0.3s ease;
@@ -148,17 +177,19 @@ h3 {
 }
 
 /* Formulário */
-.form-container {
+.form-container,
+main.contato-container {
   max-width: 620px;
-  margin: 0 auto;
-  background-color: #ffffff;
-  padding: 28px 32px;
-  border-radius: 14px;
+  margin: 3rem auto;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 12px;
   box-shadow: 0 3px 12px rgba(26, 58, 102, 0.12);
   transition: box-shadow 0.3s ease;
 }
 
-.form-container:hover {
+.form-container:hover,
+main.contato-container:hover {
   box-shadow: 0 8px 20px rgba(26, 58, 102, 0.25);
 }
 
@@ -171,7 +202,9 @@ h3 {
 
 .form-container input[type="text"],
 .form-container input[type="email"],
-.form-container textarea {
+.form-container textarea,
+.form-contato input,
+.form-contato textarea {
   width: 100%;
   padding: 12px 16px;
   margin-bottom: 20px;
@@ -181,19 +214,20 @@ h3 {
   color: #1a2e4a;
   background-color: #f5faff;
   transition: border-color 0.35s ease, background-color 0.35s ease;
+  resize: vertical;
 }
 
-.form-container input[type="text"]:focus,
-.form-container input[type="email"]:focus,
-.form-container textarea:focus {
+input:focus,
+textarea:focus {
   outline: none;
   border-color: #1a3a66;
   background-color: #e6f0ff;
 }
 
-.form-container button {
+.form-container button,
+.form-contato button {
   background-color: #1a3a66;
-  color: #e6f0ff;
+  color: white;
   border: none;
   padding: 16px 0;
   width: 100%;
@@ -204,7 +238,7 @@ h3 {
   transition: background-color 0.35s ease, transform 0.3s ease;
 }
 
-.form-container button:hover {
+button:hover {
   background-color: #3b69a4;
   transform: scale(1.05);
 }
@@ -214,17 +248,16 @@ footer {
   text-align: center;
   margin-top: 52px;
   padding: 18px 0;
-  background-color: #1a3a66;
-  color: #e6f0ff;
-  font-weight: 700;
-  font-size: 1.05rem;
+  background-color: #153b6d;
+  color: white;
+  font-weight: bold;
   border-radius: 0 0 14px 14px;
   user-select: none;
 }
 
 /* Responsividade */
 @media (max-width: 768px) {
-  nav ul {
+  .nav-links {
     flex-direction: column;
     gap: 14px;
     align-items: center;
@@ -235,7 +268,7 @@ footer {
   }
 
   main {
-    margin: 28px 14px;
+    margin: 2rem 1rem;
   }
 
   .card img {

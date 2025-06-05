@@ -3,9 +3,186 @@
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contato - Receitas da Vovó</title>
-  <link rel="stylesheet" href="style.css" />
+  <style> 
+
+    /* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Corpo */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f5f8ff;
+  color: #1e2a38;
+  line-height: 1.6;
+}
+
+/* Cabeçalho */
+header {
+  background-color: #153b6d;;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(21, 59, 109, 0.3);
+}
+
+/* Títulos */
+h1, h2, h3 {
+  font-weight: 700;
+  margin: 0px 0px 18px;
+  letter-spacing: 0.03em;
+  user-select: none;
+  color: #153b6d;
+}
+
+/* Logo */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo-container img {
+  height: 50px;
+}
+
+/* Navegação */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2.5rem;
+  padding-left: 0;
+  color:#b8d1ff; 
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.nav-links a {
+    color: #b8d1ff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s, border-bottom 0.3s;
+    font-size: 1.05rem;
+    padding: 6px 10px;
+    border-radius: 6px;
+    transition: background-color 0.35s ease, transform 0.25s ease;
+}
+
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    padding-inline-start: 40px;
+    unicode-bidi: isolate;
+}
+
+
+.nav-links a.active,
+.nav-links a:hover {
+  background-color: #3b69a4;
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(59, 105, 164, 0.4);
+}
+
+/* Container principal */
+main.contato-container {
+  max-width: 600px;
+  margin: 3rem auto;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(21, 59, 109, 0.1);
+}
+
+/* Título do formulário */
+main h2 {
+  text-align: center;
+  color: #153b6d;
+  margin-bottom: 1.5rem;
+}
+
+/* Formulário */
+.form-contato {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-contato input,
+.form-contato textarea {
+  padding: 0.75rem;
+  border: 1.8px solid #c2d3ec;
+  border-radius: 6px;
+  font-size: 1rem;
+  resize: vertical;
+  background-color: #f8fbff;
+  transition: border-color 0.3s, background-color 0.3s;
+}
+
+.form-contato input:focus,
+.form-contato textarea:focus {
+  outline: none;
+  border-color: #153b6d;
+  background-color: #e9f1fb;
+}
+
+/* Botão */
+.form-contato button {
+  background-color: #153b6d;
+  color: white;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.form-contato button:hover {
+  background-color: #1e4f95;
+  transform: translateY(-2px);
+}
+
+/* Rodapé */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #153b6d;
+  color: white;
+  margin-top: 3rem;
+  border-radius: 0 0 10px 10px;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+  }
+}
+
+  header {
+    justify-content: center;
+    text-align: center;
+  }
+  </style>
 </head>
 <body>
   <header>
@@ -15,27 +192,27 @@
     </div>
     <nav>
       <ul class="nav-links">
-        <li><a href="../../index.html">Início</a></li>
+        <li><a href="index.html">Início</a></li>
         <li><a href="sobre.html">Sobre</a></li>
-        <li><a href="maisreceitas.html">Mais Receitas</a></li>
-        <li><a href="contato.html" aria-current="page">Contato</a></li>
+        <li><a href="contato.html" class="active">Contato</a></li>
       </ul>
     </nav>
   </header>
 
-  <main>
+  <main class="contato-container">
     <h2>Fale Conosco</h2>
     <form action="#" method="post" class="form-contato">
-      <label for="nome">Nome:</label><br />
-      <input type="text" id="nome" name="nome" required /><br />
+    <form action="https://formspree.io/f/xgvyvopr" method="POST" class="form-contato">
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required />
 
-      <label for="email">Email:</label><br />
-      <input type="email" id="email" name="email" required /><br />
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" placeholder="exemplo@email.com" required />
 
-      <label for="mensagem">Mensagem:</label><br />
-      <textarea id="mensagem" name="mensagem" rows="5" required></textarea><br />
+      <label for="mensagem">Mensagem:</label>
+      <textarea id="mensagem" name="mensagem" rows="5" placeholder="Digite sua mensagem" required></textarea>
 
-      <button type="submit">Enviar</button>
+      <button type="submit">Enviar Mensagem</button>
     </form>
   </main>
 
