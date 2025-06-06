@@ -27,6 +27,15 @@ header {
   margin: 20px;
 }
 
+/* Títulos */
+h1, h2, h3 {
+  font-weight: 700;
+  margin: 0px 0px 18px;
+  letter-spacing: 0.03em;
+  user-select: none;
+  color: #153b6d;
+}
+
 .logo-container {
   display: flex;
   align-items: center;
@@ -50,6 +59,7 @@ header {
   display: flex;
   gap: 2.5rem;
   padding-left: 0;
+  color:#b8d1ff; 
 }
 
 nav {
@@ -59,11 +69,13 @@ nav {
   
 .nav-links a.active,
 .nav-links a:hover {
-  color: #ffffff;
-  border-bottom: 2px solid white;
+  background-color: #3b69a4;
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(59, 105, 164, 0.4);
 }
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -144,11 +156,12 @@ main {
 }
 
 .card img {
-  width: 100%;
-  height: 180px;
+  width: 120px;
+  height: 120px;
   object-fit: cover;
   border-bottom: 3px solid #3b69a4;
   transition: filter 0.4s ease;
+
 }
 
 .card:hover img {

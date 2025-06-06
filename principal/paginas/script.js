@@ -3,10 +3,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const navLinks = document.querySelectorAll(".nav-links a");
     navLinks.forEach(link => {
         link.addEventListener("mouseover", () => {
-            link.style.color = "#ffcc00";
+            link.style.color = "#f5f8ff";
         });
         link.addEventListener("mouseout", () => {
-            link.style.color = "white";
+            link.style.color = "#9bb9e7";
         });
     });
 

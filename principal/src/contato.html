@@ -4,9 +4,8 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contato - Receitas da Vovó</title>
+  <title>Contato - Receitopia</title>
   <style> 
-
     /* Reset básico */
 * {
   margin: 0;
@@ -26,14 +25,14 @@ body {
 header {
   background-color: #153b6d;;
   color: white;
-  padding: 1rem 2rem;
+  padding: 16px 32px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  margin: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(21, 59, 109, 0.3);
+  margin: 20px;
 }
 
 /* Títulos */
@@ -41,7 +40,6 @@ h1, h2, h3 {
   font-weight: 700;
   margin: 0px 0px 18px;
   letter-spacing: 0.03em;
-  user-select: none;
   color: #153b6d;
 }
 
@@ -50,10 +48,17 @@ h1, h2, h3 {
   display: flex;
   align-items: center;
   gap: 1rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.logo-container:hover {
+  transform: scale(1.05);
 }
 
 .logo-container img {
   height: 50px;
+  width: auto;
 }
 
 /* Navegação */
@@ -63,12 +68,6 @@ h1, h2, h3 {
   gap: 2.5rem;
   padding-left: 0;
   color:#b8d1ff; 
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
 }
 
 .nav-links a {
@@ -88,9 +87,7 @@ ul {
     margin-block-start: 1em;
     margin-block-end: 1em;
     padding-inline-start: 40px;
-    unicode-bidi: isolate;
 }
-
 
 .nav-links a.active,
 .nav-links a:hover {
@@ -98,6 +95,15 @@ ul {
   color: white;
   transform: translateY(-3px);
   box-shadow: 0 4px 8px rgba(59, 105, 164, 0.4);
+}
+
+/* Títulos */
+h1, h2, h3 {
+  font-weight: 700;
+  color: #2655ad;
+  margin-bottom: 18px;
+  letter-spacing: 0.03em;
+  user-select: none;
 }
 
 /* Container principal */
@@ -114,7 +120,6 @@ main.contato-container {
 main h2 {
   text-align: center;
   color: #153b6d;
-  margin-bottom: 1.5rem;
 }
 
 /* Formulário */
@@ -176,18 +181,20 @@ footer {
     gap: 1.5rem;
     align-items: center;
   }
-}
-
   header {
     justify-content: center;
     text-align: center;
   }
+
+}
+
+  
   </style>
 </head>
 <body>
   <header>
     <div class="logo-container">
-      <img src="Logo.png" alt="Logo Receitas da Vovó" />
+      <img src="../img/logo.png" alt="Logo " />
       <h1>Receitas da Vovó</h1>
     </div>
     <nav>
@@ -217,7 +224,9 @@ footer {
   </main>
 
   <footer>
-    <p>&copy; 2025 Receitas da Vovó</p>
+    <p>&copy; 2025 Receitopia!</p>
   </footer>
+
+  <script src="../paginas/script.js"></script>
 </body>
 </html>
